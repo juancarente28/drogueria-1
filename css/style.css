@@ -91,7 +91,7 @@ form{
     bottom: -2px;
     width: 0%;
     height: 2px;
-    background-color: blueviolet;
+    background-color: rgb(83, 226, 43);
     transition: .4s;
 } 
 .input-div::before{
