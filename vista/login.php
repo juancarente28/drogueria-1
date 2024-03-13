@@ -10,6 +10,16 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css"> 
     <link rel="stylesheet" type="text/css" href="../css/css/all.min.css"> 
 </head>
+
+<!--este codigo se realiza para permitir mantenernos en la vista del usuario logueado cuando se presione el boton hacia atras y no redirija al inicio de sesion--> 
+<?php 
+session_start();//para usar las variables sesiones
+if(!empty($_SESSION['us_tipo'])){//si existe una session activa me envia directamente al login controller, para que esta se encargue de enrutarla
+   header  ('Location: ../controlador/LoginController.php');
+}
+else{
+session_destroy();// en caso de que no haya una sesion en curso deben borrarse
+?>
 <body>
     <img class="wave" src="../img/wave.png" alt="">
     <div class="contenedor">
@@ -47,3 +57,6 @@
 </body>
 <script src="../js/login.js"></script>
 </html>
+<?php
+ }
+?>
