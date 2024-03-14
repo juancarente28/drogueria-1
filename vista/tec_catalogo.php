@@ -1,5 +1,5 @@
 <?php
-session_star();
+session_start();
 if($_SESSION['us_tipo']==2){// se realiza este if para verificar que el usuario logueado tiene rol de administrador
 ?>
 <!DOCTYPE html>

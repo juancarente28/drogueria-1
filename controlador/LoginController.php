@@ -1,4 +1,5 @@
-<?php // Se crean Variables para el inicio de sesion
+<!--// Se crean Variables para el inicio de sesion-->
+<?php 
  include_once '../modelo/Usuario.php';// con esto llamamos a usuario
 session_start();
 $user = $_POST['user'];//echo $user; echo " ";
