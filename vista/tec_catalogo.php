@@ -18,6 +18,6 @@ if($_SESSION['us_tipo']==2){// se realiza este if para verificar que el usuario 
 <?php
 } // se utilza entre codigo php para poder usar la llave y que afecte al codigo Html el if
 else{
-    header('Location: ../vista/login.php');
+    header('Location: ../index.php');
 }
 ?>

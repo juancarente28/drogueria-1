@@ -40,7 +40,7 @@ if(!empty($usuario->objetos)){// si encuentra un ususario verifica que rol tiene
 
     }
     else{// se emplea este else en caso de que el usuario no este en la BD
-            header('Location: ../vista/login.php');// con lo cual no vuelve a retornar al login
+            header('Location: ../index.php');// con lo cual no vuelve a retornar al login
     }
 }
 

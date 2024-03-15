@@ -59,32 +59,10 @@ include_once'layouts/header.php';
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.4
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
-  </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery -->
-<script src="../js/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../js/demo.js"></script>
-</body>
-</html>
-
-
 <?php
+include_once 'layouts/footer.php';
 } // se utilza entre codigo php para poder usar la llave y que afecte al codigo Html el if
 else{
-    header('Location: ../vista/login.php');
+    header('Location: ../index.php');
 }
 ?>
