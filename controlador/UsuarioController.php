@@ -22,4 +22,35 @@ $usuario->obtener_datos($_POST['dato']);//metodo invocar usuario, la cual obtend
     $jsonstring =json_encode($json[0]);//nos devuelve un json codificao, nos devuelve un strin para poderlo usar en nusetro Js
     echo $jsonstring;// se le envia el indice cero xq siempre va haber una sola concidencia, ya que el ID es unico
 }
+//esto nos permit mostrar  los datos usuario que vamos a editar en el formulario
+if($_POST['funcion']=='capturar_datos'){
+    $json=array();
+    $id_usuario=$_POST['id_usuario'];
+$usuario->obtener_datos($id_usuario);
+    foreach ($usuario->objetos as $objeto){
+        $json[]=array(
+           'telefono'=>$objeto->telefono_us,
+           'residencia'=>$objeto->residencia_us,
+           'correo'=>$objeto->correo_us,
+           'sexo'=>$objeto->sexo_us,
+           'adicional'=>$objeto->adicional_us
+
+        );
+    }
+    $jsonstring =json_encode($json[0]);//nos devuelve un json codificao, nos devuelve un strin para poderlo usar en nusetro Js
+    echo $jsonstring;// se le envia el indice cero xq siempre va haber una sola concidencia, ya que el ID es unico
+}
+
+////esto nos permite guardar los datos usuario que editamos del formulario
+if($_POST['funcion']=='editar_usuario'){
+    $id_usuario=$_POST['id_usuario'];
+    $telefono=$_POST['telefono'];
+    $residencia=$_POST['residencia'];
+    $correo=$_POST['correo'];
+    $sexo=$_POST['sexo'];
+    $adicional=$_POST['adicional'];
+    $usuario->editar($id_usuario, $telefono ,$residencia, $correo, $sexo, $adicional);
+    echo 'editado';
+}
+  
 ?>

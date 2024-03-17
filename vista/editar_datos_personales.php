@@ -38,7 +38,7 @@ include_once'layouts/header.php';
                                     <div class="text-center">
                                         <img src="../img/avatar01.png"  class="profile-user-img img-fluid img-circle">
                                     </div>
-                                    <input id="id_usuario" type="hidden" value=<?php echo $_SESSION['usuario']?>>
+                                    <input id="id_usuario" type="hidden" value="<?php echo $_SESSION['usuario']?>">
                                     <h3 id="nombre_us" class="profile-username text-center text-success">Nombre</h3>
                                     <p  id="apellidos_us"class="text-muted text-center">Apellido</p>
                                     <ul class="list-group list-group-unbordered mb-3">
@@ -71,16 +71,21 @@ include_once'layouts/header.php';
                                     <p ID="residencia_us" class="text-muted">Nueva Deli 324</p>
 
                                     <strong style="color:#0B7300">
-                                    <i class="fas fa-at mr-1"></i>Correo>
+                                    <i class="fas fa-at mr-1"></i>Correo
                                     </strong>
                                     <p id="correo_us" class="text-muted">abc@gmail.com</p>
+
+                                    <strong style="color:#0B7300">
+                                    <i class="fas fa-smile-wink mr-1"></i>Sexo
+                                    </strong>
+                                    <p id="sexo_us" class="text-muted">Masculino</p>
                                 
                                     <strong style="color:#0B7300">
                                     <i class="fas fa-pencil-alt mr-1"></i>Informacion Adicional
                                     </strong>
                                     <p id="adicional_us" class="text-muted">Nueva Deli 324</p>
 
-                                    <button class=" btn btn-block bg-gradient-danger">Editar</button>
+                                    <button class="edit btn btn-block bg-gradient-danger">Editar</button>
                                 </div>
                                 <div class="card-footer">
                                     <p class="text-muted"> Click si desea editar</p>
@@ -90,37 +95,43 @@ include_once'layouts/header.php';
                             </div>
                         </div>
                         <div class="col-md-9">
-                            <div class=" card card-success">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h3 class="card-tittle">Editar Datos Personales</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form-horizontal">
+                                 <div class="alert alert-success text-center" id="editado" style='display:none;'>
+                                        <span><i class="fas fa-check m-1" ></i>Editado</span>
+                                    </div>
+                                    <div class="alert alert-danger text-center" id="noeditado" style='display:none;'>
+                                      <span><i class="fas fa-times m-1"></i> No esta habilitado la ediccion</span>
+                                    </div>
+                                    <form id='form-usuario' class="form-horizontal">
                                         <div class="form-group row">
                                             <label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
                                             <div class="col-sm-10">
-                                                <input type="number" id="telefono" class=" form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
+                                                <input type="integer" id="telefono" class="form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="residencia" class="col-sm-2 col-form-label">Residencia</label>
                                             <div class="col-sm-10">
-                                                <input type="text" id="residencia" class=" form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
+                                                <input type="text" id="residencia" class="form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="correo" class="col-sm-2 col-form-label">Correo</label>
                                             <div class="col-sm-10">
-                                                <input type="text" id="Correo" class=" form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
+                                                <input type="text" id="correo" class="form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
                                             <div class="col-sm-10">
-                                                <input type="number" id="Sexo" class=" form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
+                                                <input type="text" id="sexo" class=" form-control"><!--no usamo name xq vamos usar javaScript, empleamos el Id para poder seleccionarla -->
                                             </div>
                                         </div>
 

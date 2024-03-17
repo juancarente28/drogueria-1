@@ -2,6 +2,7 @@ $(document).ready(function(){
     var funcion='';
     var id_usuario = $('#id_usuario').val();// estamos capturando el valor del id_usuario
    // console.log(id_usuario);
+   var edit=false;
    buscar_usuario(id_usuario);
     function buscar_usuario(dato){
         funcion='buscar_usuario';
@@ -43,5 +44,46 @@ $(document).ready(function(){
 
         })//se crea un ajax('url',{},) tipo post requiere la url los datos y la funcion que se va a ejecutar
     }
+    $(document).on('click','.edit',(e)=>{
+        funcion='capturar_datos';
+        edit=true;
+        $.post('../controlador/UsuarioController.php',{funcion,id_usuario},(response)=>{
+         const usuario = JSON.parse(response);
+         $('#telefono').val(usuario.telefono);
+         $('#residencia').val(usuario.residencia);
+         $('#correo').val(usuario.correo);
+         $('#sexo').val(usuario.sexo);
+         $('#adicional').val(usuario.adicional);
+        })
+    });
+    $('#form-usuario').submit(e=>{
+        if(edit==true){
+            let telefono=$('#telefono').val();
+            let residencia=$('#residencia').val();
+            let correo=$('#correo').val();
+            let sexo=$('#sexo').val();
+            let adicional=$('#adicional').val();
+            funcion='editar_usuario';
+            $.post('../controlador/UsuarioController.php',{id_usuario,funcion,telefono,residencia,correo,sexo,adicional},(response)=>{
+               console.log(response);
+                if(response=='editado'){
+                  $('#editado').hide('slow');//para que permanezca oculto
+                    $('#editado').show(10000);//para que el alert se muestr por 1 segundo
+                    $('#editado').hide(6000);//para que se oculten
+                    $('#form-usuario').trigger('reset');//para que todos los campos queden vacios
+                }
+                edit=false;// para que se desactive la bandera y no quede siempre habiltado para editar
+                buscar_usuario(id_usuario);
+            })
+        }
+        else{
+           $('#noeditado').hide('slow');//para que permanezca oculto
+            $('#noeditado').show(10000);//para que el alert se muestr por 1 segundo
+            $('#noeditado').hide(6000);//para que se oculten
+            $('#form-usuario').trigger('reset');//para que todos los campos queden vacios
+       
+        }
+        e.preventDefault();
+    })
 
 })//nos permite ejecutar funciones una vez cargada la pagina actual
