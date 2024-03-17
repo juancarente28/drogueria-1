@@ -43,6 +43,4 @@ if(!empty($usuario->objetos)){// si encuentra un ususario verifica que rol tiene
             header('Location: ../index.php');// con lo cual no vuelve a retornar al login
     }
 }
-
-
 ?>

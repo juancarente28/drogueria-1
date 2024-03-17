@@ -161,3 +161,4 @@ else{
     header('Location: ../index.php');
 }
 ?>
+<script src="../js/Usuario.js"></script>
