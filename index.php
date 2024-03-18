@@ -44,11 +44,11 @@ session_destroy();// en caso de que no haya una sesion en curso deben borrarse
                         <i class="fas fa-lock"></i>
                     </div>
                     <div class="div">
-                        <h5>contrasena</h5>
+                        <h5>CONTRASEÑA</h5>
                         <input type="password" name="pass" class="input">
                     </div>
                 </div>
-                <a href="">Create warplace</a>
+                <a href="">Crer </a>
                 <input type="submit" class="btn" values="Iniciar Sesion">
             </form>
 
