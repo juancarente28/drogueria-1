@@ -5,7 +5,7 @@ class Conexion{
     private $puerto = "3306";// aca depende como tengas configurado el puerto del mysql
     private $charset = "utf8"; //Tipo de codificacion
     private $usuario = "root";//por defecto es root
-    private $contrasena ="a12345B";// si tienes configurado tu bd con contrasena debes colocarla tal cual de lo contrario no podra acceder a la bd
+    private $contrasena ="";// si tienes configurado tu bd con contrasena debes colocarla tal cual de lo contrario no podra acceder a la bd
     public $pdo = null; //publico xq es la que va a retornar al momento de ser instanciada(Es el destino de las solicitudes de conexión (inicios de sesión) de aplicaciones)
     private $atributos =[PDO::ATTR_CASE=>PDO::CASE_LOWER,PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_ORACLE_NULLS=>PDO::NULL_EMPTY_STRING,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_OBJ];
     function __construct(){ // se crea el metodo constructor y dentro de este se retorna el PDO

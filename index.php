@@ -29,7 +29,7 @@ session_destroy();// en caso de que no haya una sesion en curso deben borrarse
         <div class="contenindo-login">
             <form action="controlador/LoginController.php" method="post">
                 <img src="img/logo.png" alt="">
-                <h2>Farmacia</h2>
+                <h2>Formulación</h2>
                 <div class="input-div dni">
                     <div class="i">
                         <i class="fas fa-user"></i>
