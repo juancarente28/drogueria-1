@@ -48,7 +48,7 @@ session_destroy();// en caso de que no haya una sesion en curso deben borrarse
                         <input type="password" name="pass" class="input">
                     </div>
                 </div>
-                <a href="">crear</a>
+                <a href="">crear otro</a>
                 <input type="submit" class="btn" values="Iniciar Sesion">
             </form>
 
