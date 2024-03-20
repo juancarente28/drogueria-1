@@ -2,14 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css"> 
-    <link rel="stylesheet" type="text/css" href="css/css/all.min.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <div class="content">            
+        <div class="menu container">
+            <a href="menu.html" class="nombre"><img src="img/nombre.png"height="45px" alt=""></a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">              
+            </nav>   
+        </div>            
+    </div>    
+
+    <div class="logo">
+        <img src="img/logo.png" alt="Imagen centrada" width="450" >
+    </div>
+   
 </head>
+
 
 <!--este codigo se realiza para permitir mantenernos en la vista del usuario logueado cuando se presione el boton hacia atras y no redirija al inicio de sesion--> 
 <?php 
@@ -20,23 +34,21 @@ if(!empty($_SESSION['us_tipo'])){//si existe una session activa me envia directa
 else{
 session_destroy();// en caso de que no haya una sesion en curso deben borrarse
 ?>
-<body>
-    <img class="wave" src="img/wave.png" alt="">
-    <div class="contenedor">
-        <div class="img">
-            <img src="img/bg.svg" alt="">
-        </div>
+<body> 
+<body style="background-image: url('img/escritorio.png'); background-size: cover; background-repeat: no-repeat;"> 
+    
         <div class="contenindo-login">
             <form action="controlador/LoginController.php" method="post">
-                <img src="img/logo.png" alt="">
-                <h2>Formulación</h2>
+           
+                <h2>Formulario</h2>
+                <br>
                 <div class="input-div dni">
                     <div class="i">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
                         <h5>NOMBRE</h5>
-                        <input type="text" name="user" class="input">
+                        <input type="text" name="user" class="input" placeholder="Ingresa tu nombre">
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -45,10 +57,10 @@ session_destroy();// en caso de que no haya una sesion en curso deben borrarse
                     </div>
                     <div class="div">
                         <h5>CONTRASEÑA</h5>
-                        <input type="password" name="pass" class="input">
+                        <input type="password" name="pass" class="input" placeholder="Ingresa tu contraseña">
                     </div>
                 </div>
-                <a href="">crear otro</a>
+                <a href=""style="color: white;"></a>
                 <input type="submit" class="btn" values="Iniciar Sesion">
             </form>
 
