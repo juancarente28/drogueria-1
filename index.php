@@ -47,7 +47,7 @@ session_destroy();// en caso de que no haya una sesion en curso deben borrarse
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
-                        <h5>NOMBREs</h5>
+                        <h5>NOMBRES</h5>
                         <input type="text" name="user" class="input" placeholder="Ingresa tu nombre">
                     </div>
                 </div>
